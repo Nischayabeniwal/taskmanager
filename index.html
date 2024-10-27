@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-strip">
+        <div class="header-left">
+            <i class="fas fa-bars menu-btn" onclick="toggleSidebar()"></i>
+            <h2>TaskMaster</h2>
+        </div>
+        <div class="header-right">
+            <i class="fas fa-bell"></i>
+            <i class="fas fa-search"></i>
+            <i class="fas fa-cog"></i>
+            <img src="pfp.jpg" alt="User Profile" class="profile-icon">
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <ul>
+                <li onclick="showHome()"><i class="fas fa-home"></i> Home</li>
+                <li onclick="showFeed()"><i class="fas fa-rss"></i> Feed</li>
+                <li onclick="showDiscuss()"><i class="fas fa-comments"></i> Discuss</li>
+                
+                <li><i class="fas fa-chart-bar"></i> Reports</li>
+                <li onclick="showCalendarSection()"><i class="fas fa-calendar-alt"></i> Calendar</li>
+                <li>
+                    <a href="https://github.com/Nischayabeniwal" target="_blank" style="text-decoration: none; color: inherit;">
+                        <i class="fas fa-project-diagram"></i> MyGitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content">
+            <!-- Task Status and Main Section -->
+            <div class="task-status">
+                <p class="welcome-message"><b>Welcome Nischaya,</b></p>
+                <div class="open-tasks">
+                    <h4><b>14</b></h4>
+                    <p><b>Open Tasks</b></p>
+                    
+                </div>
+                <div class="closed-tasks">
+                    <h4><b>3</b></h4>
+                    <p><b>Closed Tasks</b></p>
+                </div>
+            </div>
+
+            <!-- Dynamic Content Section -->
+            <div class="main-content" id="main-content">
+                <!-- Default Content (Home) -->
+                <div id="home-content">
+                    <div class="my-tasks">
+                        <h2><b>My Tasks</b></h2><hr>
+                        <ul>
+                            <li>1. The Start & End (Due) dates can be provided for tasks.</li>
+                            <li>2. The priority level can be set for a task.</li>
+                            <li>3. Click on the task name to see the complete details of this task.</li>
+                            <li>4. This is a subtask.</li>
+                            <li>5. Attachments and Discussions can be associated with a task.</li>
+                        </ul>
+                        <img src="random_data/home1.png" alt="data1" height="250px">
+                        <img src="random_data/home2.png" alt="data2" height="250px">
+                        <hr>
+                    </div>
+                </div>
+
+                <!-- Feed Content (Hidden by Default) -->
+                <div id="feed-content" style="display: none;">
+                    <h3>Feed</h3>
+                    
+                    <!-- Post 1 -->
+                    <div class="post">
+                        <!-- Post Header with Profile Picture and Username -->
+                        <div class="post-header">
+                            <img src="feed/profile1.png" alt="Profile Picture" class="profile-pic">
+                            <span class="username">@Nvidia</span>
+                        </div>
+                        
+                        <!-- Post Image -->
+                        <img src="feed/post1.jpg" alt="Post Image 1" class="post-image">
+                
+                        <!-- Post Footer with Interaction Icons -->
+                        <div class="post-footer">
+                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-comment"></i>
+                            <i class="fas fa-share"></i>
+                        </div>
+                
+                        <!-- Post Caption -->
+                        <p class="post-caption"><strong>Nvidia</strong> Download the latest official NVIDIA drivers to enhance your PC gaming experience and run apps faster.</p>
+                    </div>
+                
+                    <!-- Post 2 -->
+                    <div class="post">
+                        <div class="post-header">
+                            <img src="feed/profile2.png" alt="Profile Picture" class="profile-pic">
+                            <span class="username">@AMD</span>
+                        </div>
+                        
+                        <img src="feed/post2.jpg" alt="Post Image 2" class="post-image">
+                
+                        <div class="post-footer">
+                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-comment"></i>
+                            <i class="fas fa-share"></i>
+                        </div>
+                
+                        <p class="post-caption"><strong>amd</strong> AMD is the high performance and adaptive computing leader, powering the products and services that help solve the world's most important challenges.</p>
+                    </div>
+                </div>
+                 
+                <!-- Chat Content -->
+                
+                 <div id="chat-content" style="display: none;">
+                    <h3>Discuss</h3>
+                    <div class="chat-box">
+                        <div class="message">
+                            <strong><b>@admin1:</b></strong> Data for the next tech summit,<br>
+                            <img src="random_data/data1.png" height="400"  alt="data-table">
+                        </div>
+                        <div class="message">
+                            <br>
+                            <strong>@admin2:</strong>Final report of the project XI,<br>
+                            <img src="random_data/data2.png" height="400"  alt="data-table">
+
+                        </div>
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" id="messageInput" placeholder="Type a message...">
+                        <button onclick="sendMessage()">Send</button>
+                    </div>
+                </div>
+                <div id="calender-content" style="display: none;">
+                    
+                    <img src="calender2024.png" alt="2024 Calendar" height="475px">
+                </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-strip">
+        
+        <div class="footer-icons">
+            <i class="fas fa-comments"></i>
+            <i class="fas fa-user-friends"></i>
+            <i class="fas fa-chart-pie"></i>
+            <i class="fas fa-question-circle"></i>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
