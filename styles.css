@@ -27,7 +27,7 @@ body {
     top: 0;
     width: 100%;
     z-index: 1000;
-    background-image: url(bg.jpg);
+    background-image: url(wallpaper/bg.jpg);
 }
 
 .header-left {
@@ -83,7 +83,7 @@ body {
     top: 50px; /* Adjust for header */
     bottom: 50px; /* Adjust for footer */
     overflow-y: auto;
-    background-image: url(wallpaper3.jpg);
+    background-image: url(wallpaper/wallpaper3.jpg);
 }
 
 .sidebar ul {
@@ -133,7 +133,7 @@ body {
     text-align: center;
     border-radius: 8px;
     width: 150px;
-    background-image: url(wallpaper2.jpg);
+    background-image: url(wallpaper/wallpaper2.jpg);
     background-size: cover;
     background-position: center;
 }
