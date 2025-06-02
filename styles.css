@@ -5,6 +5,10 @@ body {
   color: #333;
 }
 
+body.light { background: #f4f4f4; color: #333; }
+body.dark { background: #181818; color: #eee; }
+body.blue { background: #e3f0ff; color: #222; }
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -98,4 +102,66 @@ section.active {
 
 .calendar-day h3 {
   margin-top: 0;
+}
+
+.edit-btn {
+  margin-left: 8px;
+  background: #ffd966;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.edit-input {
+  width: 60%;
+  padding: 2px 4px;
+}
+
+.deadline {
+  color: #888;
+  font-size: 0.95em;
+  margin-left: 8px;
+}
+
+.category {
+  background: #e0e7ff;
+  color: #2c3e50;
+  font-size: 0.95em;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.priority {
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.priority.high {
+  background: #ffcccc;
+  color: #b30000;
+}
+
+.priority.medium {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.priority.low {
+  background: #d4edda;
+  color: #155724;
+}
+
+.completed .task-text {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.dragElem {
+  opacity: 0.4;
 }
