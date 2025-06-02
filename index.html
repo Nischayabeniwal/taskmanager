@@ -21,10 +21,30 @@
     <section id="task-section" class="active">
       <h2>Task Manager</h2>
       <div class="task-input">
-        <input type="text" id="taskInput" placeholder="Add new task..." />
+        <input type="text" id="taskInput" placeholder="Task description..." />
+
+        <select id="categorySelect">
+          <option value="" disabled selected>Category</option>
+          <option value="Academic">Academic</option>
+          <option value="Sports">Sports</option>
+          <option value="Household">Household</option>
+          <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <select id="prioritySelect">
+          <option value="" disabled selected>Priority</option>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+
+        <input type="date" id="deadlineDate" title="Deadline date" />
+        <input type="time" id="deadlineTime" title="Deadline time" />
         <button onclick="addTask()">Add</button>
       </div>
-      <ul id="taskList"></ul>
+      <ul id="taskList" draggable="true"></ul>
     </section>
 
     <section id="calendar-section">
@@ -39,7 +59,50 @@
 
     <section id="settings-section">
       <h2>Settings</h2>
-      <p>(Placeholder for future settings: Theme, Notifications, etc.)</p>
+      <div>
+        <label>Theme:
+          <select id="themeSwitcher">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="blue">Blue</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <label>Username: <input type="text" id="usernameInput" placeholder="Enter your name"></label>
+      </div>
+      <div>
+        <label>Default Category:
+          <select id="defaultCategory">
+            <option value="Academic">Academic</option>
+            <option value="Sports">Sports</option>
+            <option value="Household">Household</option>
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <label><input type="checkbox" id="enableNotifications"> Enable Notifications</label>
+      </div>
+      <div>
+        <label>Time Format:
+          <select id="timeFormat">
+            <option value="24">24-hour</option>
+            <option value="12">12-hour</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <button id="resetTasksBtn">Reset All Tasks</button>
+      </div>
+      <div id="gamification">
+        <h3>Gamification</h3>
+        <p id="streak">Streak: 0 days</p>
+        <p id="rewards">Rewards: 0</p>
+        <p id="achievements">Achievements: None yet</p>
+      </div>
     </section>
   </main>
 
